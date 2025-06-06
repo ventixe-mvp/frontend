@@ -42,6 +42,7 @@
 
   --headline-color: var(--secondary-100);
   --text-color: var(--gray-100);
+  --text-semi-muted-color: var(--gray-80);
   --text-muted-color: var(--gray-60);
   --background-color: var(--gray-10);
   --nav-background-color: var(--cool-gray-20);
@@ -94,7 +95,7 @@
 }
 
 html, body {
-  margin: 0;
+  margin: 0.5rem;
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
@@ -102,6 +103,12 @@ html, body {
   color: var(--text-color);
   background-color: var(--background-color);
 }
+
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
 
 .center-wrapper {
   display: flex;
@@ -135,7 +142,19 @@ nav {
  grid-area: nav;
  background-color: var(--nav-background-color);
  border-radius: 1rem;
- padding: 1.5rem;
+ padding-top: 0.5rem;
+ padding-left: 2.5rem;
+}
+
+.nav-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  gap: 0.8rem;
 }
 
 header {
@@ -143,6 +162,9 @@ grid-area: header;
 background-color: var(--header-background-color);
 border-radius: 1rem;
 padding: 1.5rem;
+padding-left: 2rem;
+font-size: 24px;
+font-weight: 600;
 }
 
 main {
@@ -157,4 +179,146 @@ grid-area: footer;
 background-color: var(--footer-background-color);
 border-radius: 1rem;
 padding: 1.5rem;
+color: var(--text-semi-muted-color);
 }
+
+.event-card {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  background-color: var(--card-background-color);
+
+  border-radius: 1rem;
+  height: 350px;
+  width: 280px;
+  padding: 1rem;
+}
+
+.image-container {
+  background-color: var(--gray-30);
+  border-radius: 1rem;
+  height: 200px;
+}
+
+.card-text {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.event-link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.card-location {
+  font-size: 14px;
+  color: var(--text-semi-muted-color);
+}
+
+.event-details-card {
+  background-color: var(--card-background-color);
+  min-height: 550px;
+  width: 650px;
+  border-radius: 1rem;
+  
+}
+
+.event-image-container {
+  background-color: var(--gray-30);
+  border-radius: 1rem 1rem 0 0;
+  height: 350px;
+  width: 650px;
+}
+
+.event-details-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "title booking" "location location" "divider divider" "about about";
+  gap: 0.5rem;
+  padding: 1.2rem;
+  
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    grid-area: title;
+  }
+
+  .link {
+    grid-area: booking;
+    text-align: right;
+    color: var(--primary-100);
+    margin-top: 0.4rem;
+    margin-right: 1rem;
+
+  }
+  .card-location {
+    grid-area: location;
+  }
+
+  .divider {
+    grid-area: divider;
+    height: 1px;
+    background-color: var(--gray-30);
+    border: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about {
+    grid-area: about;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .about-header {
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 14px;
+    color: var(--text-semi-muted-color)
+  }
+}
+
+.booking-card {
+  background-color: var(--card-background-color);
+  height: 450px;
+  width: 500px;
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  input {
+    border-radius: 0.2rem;
+    border-color: var(--border-color);
+    height: 1.5rem;
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+
+
+  .input-form {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    background-color: var(--button-primary-background-color);
+    height: 2rem;
+    width: 8rem;
+    border: none;
+    border-radius: 1rem;
+    color: var(--button-primary-text-color);
+    font-size: 14px;
+    margin-top: 1rem;
+  }
+}
+

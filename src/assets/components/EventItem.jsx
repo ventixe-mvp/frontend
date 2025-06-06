@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom'
 
 const EventItem = ({item}) => {
   return (
-    <Link to={`/events/${item.id}`} >
-      <div className="event-card">
-        <div>{item.title}</div>
+    <div className='event-card'>
+      <div className='image-container'></div>
+      <div className='card-text'>
+        <Link to={`/events/${item.id}`} className='event-link'>
+            <div>{item.title}</div>  
+        </Link>
+        <div className='card-location'><i class="fa-regular fa-location-dot"></i> {item.location}</div>
       </div>
-    </Link>
+    </div>
+
   )
 }
 

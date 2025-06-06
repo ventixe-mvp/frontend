@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Bookings = () => {
   const navigate = useNavigate()
@@ -8,7 +11,7 @@ const Bookings = () => {
   const [formData, setFormData] = useState({ 
     eventId: id, 
     firstName: '', 
-    lastName: '', 
+    lastName: '',
     email: '', 
     streetName: '', 
     postalCode: '', 
@@ -59,36 +62,39 @@ const Bookings = () => {
   }
 
   return (
-    <div>
-      <h1>Book Event - {event.title}</h1>
-        <form onSubmit={handleSubmit} noValidate>
-          <div>
-            <label>First Name</label>
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
-          </div>
-          <div>
-            <label>Last Name</label>
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
-          </div>
-          <div>
-            <label>E-mail</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          </div>
-          <div>
-            <label>Street Name</label>
-            <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} required />
-          </div>
-          <div>
-            <label>Postal Code</label>
-            <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
-          </div>
-          <div>
-            <label>City</label>
-            <input type="text" name="city" value={formData.city} onChange={handleChange} required />
-          </div>
-          <button type="submit">Book Now</button>
-        </form>
+    <div className="portal-wrapper">
+      <Nav />
+      <Header />
+      <main>    
+        <div className='booking-card'>
+          <h1>Book Event - {event.title}</h1>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className='input-form'>
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required placeholder='First Name'/>
+              </div>
+              <div className='input-form'>
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required placeholder='Last Name'/>
+              </div>
+              <div className='input-form'>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder='E-mail'/>
+              </div>
+              <div className='input-form'>
+                <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} required placeholder='Street Name'/>
+              </div>
+              <div className='input-form'>
+                <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required placeholder='Postal Code'/>
+              </div>
+              <div className='input-form'>
+                <input type="text" name="city" value={formData.city} onChange={handleChange} required placeholder='City'/>
+              </div>
+              <button type="submit">Book Now</button>
+            </form>
+        </div>
+      </main>
+      <Footer />
     </div>
+
+
   )
 }
 

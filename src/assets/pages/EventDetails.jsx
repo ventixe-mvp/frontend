@@ -28,9 +28,19 @@ const EventDetails = () => {
       <Nav />
       <Header />
       <main>
-        <div className="event-details">
-         <h1>{event.title}</h1>
-         <Link to={`/events/booking/${id}`}>Book Event</Link>
+        <div className="event-details-card">
+          <div className='event-image-container'></div>
+          <div className='event-details-text'>
+            <div class='title'>{event.title}</div>
+            <Link to={`/events/booking/${id}`} className='link'>Book Event</Link>
+            <div className='card-location'><i class="fa-regular fa-location-dot"></i> {event.location}</div>
+            <div className='divider'></div>
+            <div className='about'>
+              <div className='about-header'>About Event</div>
+              <div className='description'>{event.description}</div>
+            </div>
+          </div>
+
         </div>
       </main>
       <Footer />
