@@ -319,6 +319,10 @@ color: var(--text-semi-muted-color);
     color: var(--button-primary-text-color);
     font-size: 14px;
     margin-top: 1rem;
+    cursor: pointer;
+
+
   }
+
 }
 
